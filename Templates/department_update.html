@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/departments/update" method="POST">
+        <label for="current_department_name">Текущее название подразделения:</label><br>
+        <input type="text" id="current_department_name" name="current_department_name" required><br><br>
+
+        <label for="new_department_name">Новое название подразделения:</label><br>
+        <input type="text" id="new_department_name" name="new_department_name" required><br><br>
+
+        <input type="submit" value="Обновить">
+    </form>
+
+{% endblock %}

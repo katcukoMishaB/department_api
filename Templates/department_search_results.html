@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if department %}
+    <h1>Результаты поиска</h1>
+    <h2>Информация о подразделении</h2>
+        <ul>
+            <li><strong>id:</strong> {{ department.id }}</li>
+            <li><strong>Название:</strong> {{ department.department_name }}</li>
+        </ul>
+    {% else %}
+    <h1>Подразделение не найдено</h1>
+    {% endif %}
+{% endblock %}

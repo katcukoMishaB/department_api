@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/departments/delete" method="POST">
+    <label for="department_name">Название подразделения:</label><br>
+    <input type="text" id="department_name" name="department_name" required><br><br>
+    <input type="submit" value="Удалить">
+</form>
+
+{% endblock %}

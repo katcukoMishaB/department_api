@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Поиск подразделения</h1>
+    <form action="/employees/search" method="POST">
+        <label for="last_name">Введите Фамилию работника:</label><br>
+        <input type="text" id="last_name" name="last_name" required><br><br>
+        <label for="first_name">Введите Имя работника:</label><br>
+        <input type="text" id="first_name" name="first_name" required><br><br>
+        <label for="patronimic">Введите Отчество работника:</label><br>
+        <input type="text" id="patronimic" name="patronimic" required><br><br>
+        <label for="department_name">Введите Подразделение работника:</label><br>
+        <input type="text" id="department_name" name="department_name" required><br><br>
+        <input type="submit" value="Поиск">
+    </form>
+
+{% endblock %}

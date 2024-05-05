@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if employee %}
+    <h1>Результаты поиска</h1>
+    <h2>Информация о работнике</h2>
+        <ul>
+            <li><strong>id:</strong> {{ employee.id }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.departments.department_name }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.last_name }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.first_name }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.patronimic }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.salary }}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.hire_date}}</li>
+            <li><strong>Название подразделения:</strong> {{ employee.working_status}}</li>
+        </ul>
+    {% else %}
+    <h1>Работник не найдено</h1>
+    {% endif %}
+{% endblock %}

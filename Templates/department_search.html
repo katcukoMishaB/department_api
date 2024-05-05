@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Поиск подразделения</h1>
+    <form action="/departments/search" method="POST">
+        <label for="department_name">Введите название подразделения:</label><br>
+        <input type="text" id="department_name" name="department_name" required><br><br>
+        <input type="submit" value="Поиск">
+    </form>
+
+{% endblock %}

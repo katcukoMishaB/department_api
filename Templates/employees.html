@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Список всех работников</h1>
+    <ul>
+        {% for employee in employees %}
+            <li>{{ employee.last_name }} {{ employee.first_name }} {{ employee.patronimic }}, {{ employee.departments.department_name }}, {{ employee.salary }}, {{ employee.hire_date.strftime('%Y-%m-%d') }},</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
