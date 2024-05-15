@@ -10,6 +10,5 @@ class Employee(db.Model):
     patronimic = db.Column(db.String(128), index=True)
     salary = db.Column(db.Integer, index=True)
     hire_date = db.Column(db.Date, index=True)
-    working_status =  db.Column(db.Boolean, index=True)
 
     departments = db.relationship('Department', back_populates='employees')

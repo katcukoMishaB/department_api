@@ -1,14 +1,22 @@
 <!doctype html>
 <html>
     <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
       {% if title %}
       <title>{{ title }} - Department</title>
       {% else %}
       <title>Department</title>
       {% endif %}
+      <style>
+        body{
+           padding: 10px; 
+        }
+      </style>
     </head>
     <body>
-        <div>DepartmentApi: <nav> <a href="/index">Home</a> <a href="/Nichego">Login</a> </nav></div>
+        <div>DepartmentApi: <nav> <a href="/index">Главная</a>/<a href="/departments">Получить список всех подразделений</a>/<a href="/employees">Получить список всех работников</a> </nav></div>
         <hr>
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -21,5 +29,7 @@
         {% endwith %}
         {% block content %}
         {% endblock %}
+        
     </body>
+    
 </html>

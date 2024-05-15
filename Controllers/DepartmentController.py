@@ -3,6 +3,7 @@ from Forms.formDepertmentAdd import DepartmentAdd
 
 
 from Models.departmentModel import Department
+from Models.employeeModel import Employee
 from flask import render_template, flash, redirect, url_for, jsonify
 from flask_restful import Resource, request
 
@@ -25,8 +26,8 @@ class DepartmentController(Resource):
             existing_department = Department.query.filter_by(department_name=department_name).first()
 
             if existing_department:
-                print(f'уже есть')
-                return jsonify({'message': 'Tags for this user already exist'}), 200
+                flash('Подразделение с таким названием уже существует.')
+                return redirect(url_for('add_department'))
 
             new_department = Department(
                 department_name = department_name
@@ -36,7 +37,8 @@ class DepartmentController(Resource):
             db.session.commit()
 
             print('добавлен')
-            return redirect('/index')
+            flash(f'Подразделение "{department_name}" успешно удалено.')
+            return redirect(url_for('add_department'))
         return render_template('department_add.html', title='Department Add', form=form)
     
 
@@ -63,46 +65,56 @@ class DepartmentController(Resource):
     @app.route('/departments/search/<int:department_id>', methods=['GET'])
     def search_department_results(department_id):
         department = Department.query.get_or_404(department_id)
-        return render_template('department_search_results.html', department=department)
+        employees = Employee.query.filter_by(department_id=department_id).all()
+        return render_template('department_search_results.html', department=department, employees=employees)
 
     
 
+
     @staticmethod
-    @app.route('/departments/update', methods=['GET','POST'])
+    @app.route('/departments/update', methods=['GET','PUT'])
     def update_department():
-        if request.method == 'POST':
-            current_department_name = request.form.get('current_department_name')
-            new_department_name = request.form.get('new_department_name')
+        if request.method == 'PUT':
+            data = request.json
+            current_department_name = data.get('current_department_name')
+            new_department_name = data.get('new_department_name')
 
             department = Department.query.filter_by(department_name=current_department_name).first()
-
-            if department:
+            department_2 = Department.query.filter_by(department_name=new_department_name).first()
+            if department and not department_2:
                 department.department_name = new_department_name
                 db.session.commit()
                 flash(f'Подразделение "{current_department_name}" успешно обновлено на "{new_department_name}".')
-                return redirect('/departments')
+                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
             else:
-                flash(f'Подразделение "{current_department_name}" не найдено.')
-                return redirect('/departments/update')
-
+                flash(f'Подразделение "{current_department_name}" не найдено или название на которые вы пытаетесь сменить уже существует')
+                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
+        
         return render_template('department_update.html')
     
 
     @staticmethod
-    @app.route('/departments/delete', methods=['GET','POST'])
+    @app.route('/departments/delete', methods=['GET','DELETE'])
     def delete_department():
-        if request.method == 'POST':
-            department_name = request.form.get('department_name')
-
+        if request.method == 'DELETE':
+            data = request.json
+            department_name = data.get('department_name')
             department = Department.query.filter_by(department_name=department_name).first()
             print(department)
             if department:
-                db.session.delete(department)
-                db.session.commit()
-                flash(f'Подразделение "{department_name}" успешно удалено.')
-                return redirect('/departments')
+                try:
+                    Employee.query.filter_by(department_id=department.id).delete()
+                    db.session.delete(department)
+                    db.session.commit()
+
+                    flash(f'Подразделение "{department_name}" и все его работники успешно удалены.')
+                    return jsonify({'message': f'Подразделение "{department_name}" и все его работники успешно удалены.'}), 200
+                except Exception as e:
+                    flash(f'Ошибка удаления подразделения: {str(e)}')
+                    db.session.rollback()
+                    return jsonify({'error': 'Ошибка удаления подразделения'}), 500
             else:
-                flash(f'Подразделение "{department_name}" не найдено.')
-                return redirect('/departments')
+                flash(f'Подразделение "{department_name}" не найдено...')
+                return jsonify({'error': f'Подразделение "{department_name}" не найдено.'}), 200
 
         return render_template('department_delete.html')

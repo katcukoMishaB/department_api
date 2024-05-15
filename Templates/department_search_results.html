@@ -4,10 +4,45 @@
     {% if department %}
     <h1>Результаты поиска</h1>
     <h2>Информация о подразделении</h2>
-        <ul>
-            <li><strong>id:</strong> {{ department.id }}</li>
-            <li><strong>Название:</strong> {{ department.department_name }}</li>
-        </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№ (ID)</th>
+                <th>Название подразделения</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{ department.id }}</td>
+                    <td>{{ department.department_name }}</td>
+                </tr>
+        </tbody>
+    </table>
+    <h2>Работники этого подразделения</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№ (ID)</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+                <th>Зарплата</th>
+                <th>Дата найма</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.last_name }}</td>
+                    <td>{{ employee.first_name }}</td>
+                    <td>{{ employee.patronimic }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>{{ employee.hire_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     {% else %}
     <h1>Подразделение не найдено</h1>
     {% endif %}

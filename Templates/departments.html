@@ -1,10 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <nav>
+    <a href="/departments/search">Получить информацию о конкретном подразделении</a>/
+    <a href="/departments/add">Добавить новое подразделение</a>/
+    <a href="/departments/update">Обновить информацию о подразделении</a>/
+    <a href="/departments/delete">Удалить подразделение</a>
+    </nav>
     <h1>Список всех подразделений</h1>
-    <ul>
-        {% for department in departments %}
-            <li>{{ department.department_name }}</li>
-        {% endfor %}
-    </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>№ (ID)</th>
+                    <th>Название подразделения</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for department in departments %}
+                    <tr>
+                        <td>{{ department.id }}</td>
+                        <td>{{ department.department_name }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 {% endblock %}

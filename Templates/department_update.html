@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <form action="/departments/update" method="POST">
+    <form id="PutForm">
         <label for="current_department_name">Текущее название подразделения:</label><br>
         <input type="text" id="current_department_name" name="current_department_name" required><br><br>
 
@@ -10,5 +10,30 @@
 
         <input type="submit" value="Обновить">
     </form>
-
+    <script>
+        document.getElementById('PutForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const current_department_name = document.getElementById('current_department_name').value;
+            const new_department_name = document.getElementById('new_department_name').value;
+            fetch('/departments/update', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ current_department_name: current_department_name, new_department_name: new_department_name}),
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                } 
+                else {
+                    
+                    throw new Error('Ошибка удаления подразделения');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+            });
+        });
+    </script>
 {% endblock %}

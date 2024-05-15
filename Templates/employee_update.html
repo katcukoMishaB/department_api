@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Обновить данные работника</h1>
+    <form id="employee-update-form">
+        <label for="last_name">Фамилия:</label><br>
+        <input type="text" id="last_name" name="last_name" value="{{ employee.last_name }}" required><br><br>
+
+        <label for="first_name">Имя:</label><br>
+        <input type="text" id="first_name" name="first_name" value="{{ employee.first_name }}" required><br><br>
+
+        <label for="patronimic">Отчество:</label><br>
+        <input type="text" id="patronimic" name="patronimic" value="{{ employee.patronimic }}" required><br><br>
+
+        <label for="department_name">Название подразделения:</label><br>
+        <input type="text" id="department_name" name="department_name" value="{{ employee.departments.department_name }}" required><br><br>
+
+        <label for="salary">Зарплата:</label><br>
+        <input type="number" id="salary" name="salary" value="{{ employee.salary }}" required><br><br>
+
+        <label for="hire_date">Дата найма:</label><br>
+        <input type="date" id="hire_date" name="hire_date" value="{{ employee.hire_date }}" required><br><br>
+
+        <input type="button" value="Обновить" onclick="submitForm()">
+    </form>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('employee-update-form');
+            const formData = new FormData(form);
+
+            fetch(`/employees/update/{{ employee.id }}`, {
+                method: 'PUT',
+                body: JSON.stringify(Object.fromEntries(formData)),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = `/employees/${{ employee.id }}`;
+                } else {
+                    alert('Ошибка при обновлении данных работника');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+{% endblock %}
