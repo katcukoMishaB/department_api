@@ -1,0 +1,536 @@
+2024-06-05 03:06:21,554 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:123
+2024-06-05 03:06:26,358 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 12
+2024-06-05 03:07:20,852 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 13
+2024-06-05 03:10:06,550 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:13
+2024-06-05 03:10:46,410 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:13
+2024-06-05 03:10:59,093 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение 123  c id 11 на 123
+2024-06-05 03:10:59,096 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 03:11:22,564 : ERROR : ServiceLogger — updateDepartment:85 — Такое подразделение уже есть — название:123
+2024-06-05 03:11:28,568 : ERROR : ServiceLogger — updateDepartment:85 — Такое подразделение уже есть — название:123
+2024-06-05 03:11:32,522 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение 13  c id 10 на 13
+2024-06-05 03:11:32,525 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 03:12:35,280 : ERROR : ServiceLogger — updateDepartment:85 — Такое подразделение уже есть — название:13
+2024-06-05 03:13:29,231 : ERROR : ServiceLogger — updateDepartment:85 — Такое подразделение уже есть — название:123
+2024-06-05 03:13:33,781 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение 1323  c id 10 на 1323
+2024-06-05 03:13:33,784 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 03:13:48,144 : ERROR : ServiceLogger — updateDepartment:85 — Такое подразделение уже есть — название:1323
+2024-06-05 03:13:55,674 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение 31323  c id 10 на 31323
+2024-06-05 03:13:55,677 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 20:48:16,136 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 20:48:31,096 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:48:37,874 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:1
+2024-06-05 20:48:47,563 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:48:47,694 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-05 20:51:14,157 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:51:14,166 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('12', '12', '12')
+2024-06-05 20:51:29,819 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-05 20:51:45,351 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:121
+2024-06-05 20:51:53,728 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:51:53,730 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('12', '12', '12')
+2024-06-05 20:52:04,119 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:52:04,267 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 2>
+2024-06-05 20:52:04,271 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:52:31,480 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:53:41,466 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-05 20:53:45,277 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-05 20:53:48,728 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:54:23,128 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:54:36,320 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:54:36,321 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-05 20:54:40,442 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:54:40,447 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('121', '12', '12')
+2024-06-05 20:55:12,077 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:12,080 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('121', '12', '12')
+2024-06-05 20:55:16,514 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:16,607 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 3>
+2024-06-05 20:55:16,610 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:55:28,875 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:28,878 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('121', '1232', '12')
+2024-06-05 20:55:33,732 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:33,847 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 4>
+2024-06-05 20:55:33,849 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:55:41,548 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:41,550 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('1211', '1232', '12')
+2024-06-05 20:55:44,719 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:55:44,851 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 5>
+2024-06-05 20:55:44,854 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 20:59:17,755 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 20:59:17,765 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('1211', '1232', '121')
+2024-06-05 21:10:42,252 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:11:42,000 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 21:11:56,650 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 21:12:05,895 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:12:22,246 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:1
+2024-06-05 21:12:28,939 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:12:29,062 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-05 21:12:29,064 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:12:49,759 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:12:49,892 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 2>
+2024-06-05 21:12:49,894 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:13:40,765 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:14
+2024-06-05 21:13:50,403 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:13:50,417 : INFO : ServiceLogger — updateEmployee:127 — Изменены данные работника 1211  c id 2 на {'department_id': 11, 'last_name': '12111', 'first_name': '1232', 'patronimic': '1231', 'salary': 12}
+2024-06-05 21:13:50,419 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:14:10,357 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:15:25,428 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:15:25,434 : INFO : ServiceLogger — updateEmployee:127 — Изменены данные работника 1211  c id 2 на {'department_id': 11, 'last_name': '12111', 'first_name': '1232', 'patronimic': '1231', 'salary': 12}
+2024-06-05 21:15:25,436 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:15:40,454 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:15:40,595 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника 12111  c id 2 на {'department_id': 11, 'last_name': '12111', 'first_name': '1232', 'patronimic': '1231', 'salary': 12}
+2024-06-05 21:15:40,598 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:15:59,898 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:16:00,004 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника 121111  c id 2 на {'department_id': 11, 'last_name': '121111', 'first_name': '1232', 'salary': 12, 'patronimic': '1231'}
+2024-06-05 21:16:00,007 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:16:05,874 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:16:05,878 : ERROR : ServiceLogger — updateEmployee:122 — Такой работник уже есть — Фио:('121111', '1232', '1231')
+2024-06-05 21:16:25,672 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:16:25,785 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника 121111  c id 2 на {'department_id': 11, 'last_name': '121111', 'first_name': '12332', 'salary': 123, 'patronimic': '1231'}
+2024-06-05 21:16:25,786 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:19:11,827 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:19:11,839 : ERROR : ServiceLogger — updateEmployee:122 — Такой работник уже есть — Фио:('121111', '12332', '1231')
+2024-06-05 21:19:16,250 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:19:16,355 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника 121111  c id 2 на {'department_id': 11, 'last_name': '121111', 'first_name': '12332', 'salary': 1233, 'patronimic': '1231'}
+2024-06-05 21:19:16,359 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:20:21,553 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:20:21,562 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('121111', '12332', '1231')
+2024-06-05 21:20:28,880 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:20:29,001 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 3>
+2024-06-05 21:20:29,005 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:21:21,054 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:4
+2024-06-05 21:21:25,295 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 3
+2024-06-05 21:21:31,384 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:27:19,237 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:27:29,783 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-05 21:27:32,397 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:3
+2024-06-05 21:34:58,388 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 21:35:12,632 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 11
+2024-06-05 21:35:21,780 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:3
+2024-06-05 21:35:23,945 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 21:35:35,690 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:11
+2024-06-05 21:35:39,725 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 21:35:39,879 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 2>
+2024-06-05 21:35:39,881 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 22:08:23,677 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 22:08:37,496 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 22:56:52,779 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 2>
+2024-06-05 22:56:53,801 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 22:56:54,580 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 22:56:55,546 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 22:56:56,419 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 22:56:57,205 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 22:56:58,188 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 22:56:58,996 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 22:59:33,272 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 22:59:34,396 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 22:59:35,211 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 22:59:36,098 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 22:59:36,973 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 22:59:37,756 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 22:59:38,780 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 22:59:39,547 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:28:01,346 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:28:02,337 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:28:03,155 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:28:04,056 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:28:04,823 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:28:05,580 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:28:07,246 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:28:07,971 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:29:01,415 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:29:02,673 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:29:03,466 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:29:04,340 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:29:05,158 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:29:05,951 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:29:06,874 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:29:07,582 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:30:01,217 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:30:02,309 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:30:03,085 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:30:03,918 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:30:04,719 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:30:05,501 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:30:06,459 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:30:07,218 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:30:14,607 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:30:15,674 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:30:16,434 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:30:17,292 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:30:18,161 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:30:18,950 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:30:19,908 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:30:20,625 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:34:49,477 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:34:49,777 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:34:49,862 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:34:50,038 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:34:50,213 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:34:50,296 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:34:50,612 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:34:50,740 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-05 23:36:16,581 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-05 23:36:16,585 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:36:23,526 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 2>
+2024-06-05 23:36:23,529 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:36:24,398 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:4
+2024-06-05 23:36:27,201 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 3>
+2024-06-05 23:36:27,203 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:36:48,600 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:10
+2024-06-05 23:36:53,775 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:36:53,915 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-05 23:36:53,920 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-05 23:37:14,680 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 4>
+2024-06-05 23:37:15,021 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-05 23:37:15,123 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-05 23:37:15,298 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-05 23:37:15,490 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-05 23:37:15,589 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-05 23:37:15,899 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-05 23:37:15,998 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:05:38,050 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:05:49,212 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-06 00:05:54,770 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:06:07,521 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-06 00:06:35,466 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:07:12,882 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:07:13,216 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-06 00:07:13,400 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:07:21,849 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-06 00:07:22,119 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:07:22,569 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:07:22,689 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:07:22,897 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:07:23,104 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:07:23,305 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:07:23,514 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:07:23,896 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение Updated Department  c id 1 на Updated Department
+2024-06-06 00:07:24,015 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:08:15,279 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:999
+2024-06-06 00:08:15,706 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:08:16,307 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:08:16,479 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:08:16,683 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:08:16,918 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:08:17,133 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:08:17,327 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:08:17,599 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:08:17,710 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:09:11,281 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:09:11,501 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:09:11,826 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:09:11,929 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:09:12,119 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:09:12,347 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:09:12,594 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:09:12,828 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:09:13,172 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:09:13,271 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:13:34,607 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:13:34,953 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:13:34,955 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:13:35,200 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:13:35,491 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:13:35,611 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:13:35,827 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:13:36,059 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:13:36,262 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:13:36,460 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:13:36,810 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:13:36,936 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:15:10,446 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:15:10,691 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:15:10,816 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 2>
+2024-06-06 00:15:11,066 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:15:11,374 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:15:11,485 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:15:11,683 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:15:11,917 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:15:12,102 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:15:12,321 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:15:12,584 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:15:12,702 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:18:02,280 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:18:02,549 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:18:02,552 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:18:02,800 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:18:03,116 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:18:03,235 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:18:03,442 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:18:03,659 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:18:03,859 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:18:04,076 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:18:04,350 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:18:04,452 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:26:13,887 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:26:13,994 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:26:14,254 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:26:14,254 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:26:14,587 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:26:14,588 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:26:14,918 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:26:15,095 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:26:15,353 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:26:15,613 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:26:15,713 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:26:16,046 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:26:16,161 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:26:16,280 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:1
+2024-06-06 00:27:58,714 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:27:58,983 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:27:58,987 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:27:59,199 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:27:59,491 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:27:59,602 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:27:59,892 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:28:00,218 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:28:00,596 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:28:00,918 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:28:01,209 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:28:01,336 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:30:11,052 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:11,203 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:30:11,439 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:11,440 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:30:11,788 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:11,789 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:30:12,104 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:30:12,264 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:30:12,488 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:30:12,755 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:30:12,864 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:30:13,156 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:13,263 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:30:13,486 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:30:13,487 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:13,488 : ERROR : ServiceLogger — updateEmployee:115 — Работника нет — id:999
+2024-06-06 00:30:53,645 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:30:53,857 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:30:53,859 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:30:54,100 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:30:54,425 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:30:54,620 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:30:54,826 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:30:55,075 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:30:55,301 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:55,554 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:30:55,842 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:30:55,952 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:31:02,064 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:31:02,281 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:31:02,283 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:31:02,498 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:31:02,899 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:31:03,002 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:31:03,200 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:31:03,416 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:31:03,626 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:03,834 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:04,158 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:31:04,259 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-06 00:31:17,275 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:17,389 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:31:17,645 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:17,645 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:31:17,999 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:18,001 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:31:18,314 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:31:18,425 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:31:18,658 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:31:18,899 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:31:19,016 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:31:19,324 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:19,431 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:31:19,630 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:31:19,631 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:31:19,632 : ERROR : ServiceLogger — updateEmployee:115 — Работника нет — id:999
+2024-06-06 00:32:21,047 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:21,174 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:32:21,418 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:21,418 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:32:21,850 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:21,851 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:32:22,199 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:32:22,318 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:32:22,558 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:32:22,784 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:32:22,885 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:32:23,194 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:23,284 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:32:23,482 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:32:23,484 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:23,485 : ERROR : ServiceLogger — updateEmployee:115 — Работника нет — id:999
+2024-06-06 00:32:39,898 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:40,023 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:32:40,233 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:40,233 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:32:40,600 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:40,601 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:32:40,922 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:32:41,033 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:32:41,249 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:32:41,483 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:32:41,599 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:32:41,891 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:42,014 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:32:42,213 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:32:42,214 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:32:42,215 : ERROR : ServiceLogger — updateEmployee:115 — Работника нет — id:999
+2024-06-06 00:33:24,809 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:24,935 : INFO : ServiceLogger — addEmployee:87 — Добавлен работник <Employee 1>
+2024-06-06 00:33:25,212 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:25,212 : ERROR : ServiceLogger — addEmployee:69 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-06 00:33:25,553 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:25,555 : ERROR : ServiceLogger — addEmployee:75 — Такой работник уже есть — Фио:('UniqueLast', 'UniqueFirst', 'UniquePatronimic')
+2024-06-06 00:33:25,885 : INFO : ServiceLogger — deleteEmployee:100 — Удален работник 1
+2024-06-06 00:33:26,004 : ERROR : ServiceLogger — deleteEmployee:95 — Работника нет — id:999
+2024-06-06 00:33:26,237 : INFO : ServiceLogger — findAllEmployees:29 — Выполнен вывод всех работников.
+2024-06-06 00:33:26,470 : INFO : ServiceLogger — findEmployee:54 — Выполнен вывод работника.
+2024-06-06 00:33:26,579 : ERROR : ServiceLogger — findEmployee:42 — Работника нет — id:999
+2024-06-06 00:33:26,871 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:26,977 : INFO : ServiceLogger — updateEmployee:131 — Изменены данные работника UpdatedLast  c id 1 на {'department_id': 1, 'last_name': 'UpdatedLast', 'first_name': 'UpdatedFirst', 'patronimic': 'UpdatedPatronimic', 'salary': 3000}
+2024-06-06 00:33:27,201 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:33:27,202 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:27,202 : ERROR : ServiceLogger — updateEmployee:115 — Работника нет — id:999
+2024-06-06 00:33:31,722 : ERROR : ServiceLogger — findDepartment:34 — Подразделения нет — id:2
+2024-06-06 00:33:31,925 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:33:31,928 : ERROR : ServiceLogger — addDepartment:51 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-06 00:33:32,109 : INFO : ServiceLogger — addDepartment:58 — Добавлено подразделение <Department 1>
+2024-06-06 00:33:32,392 : INFO : ServiceLogger — deleteDepartment:71 — Удалено подразделение 1
+2024-06-06 00:33:32,503 : ERROR : ServiceLogger — deleteDepartment:65 — Такого подразделения нет — id:999
+2024-06-06 00:33:32,676 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:33:32,884 : INFO : ServiceLogger — findAllDepartments:21 — Выполнен вывод всех подразделений.
+2024-06-06 00:33:33,085 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:33,245 : INFO : ServiceLogger — findDepartment:42 — Выполнен вывод подразделения.
+2024-06-06 00:33:33,502 : INFO : ServiceLogger — updateDepartment:89 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-06 00:33:33,603 : ERROR : ServiceLogger — updateDepartment:80 — Подразделения нет — id:999
+2024-06-25 18:25:23,177 : INFO : ServiceLogger — addDepartment:68 — Добавлено подразделение <Department 1>
+2024-06-25 18:25:23,193 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 18:26:56,882 : ERROR : ServiceLogger — addDepartment:61 — Такое подразделение уже есть — название:один
+2024-06-25 18:27:02,601 : INFO : ServiceLogger — addDepartment:68 — Добавлено подразделение <Department 2>
+2024-06-25 18:27:02,605 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 18:29:03,481 : INFO : ServiceLogger — addEmployee:92 — Добавлен работник <Employee 1>
+2024-06-25 18:29:03,485 : INFO : ServiceLogger — findAllEmployees:31 — Выполнен вывод всех работников.
+2024-06-25 18:29:16,446 : INFO : ServiceLogger — addEmployee:92 — Добавлен работник <Employee 2>
+2024-06-25 18:29:16,448 : INFO : ServiceLogger — findAllEmployees:31 — Выполнен вывод всех работников.
+2024-06-25 18:29:19,320 : INFO : ServiceLogger — addEmployee:92 — Добавлен работник <Employee 3>
+2024-06-25 18:29:19,322 : INFO : ServiceLogger — findAllEmployees:31 — Выполнен вывод всех работников.
+2024-06-25 18:29:23,020 : INFO : ServiceLogger — addEmployee:92 — Добавлен работник <Employee 4>
+2024-06-25 18:29:23,021 : INFO : ServiceLogger — findAllEmployees:31 — Выполнен вывод всех работников.
+2024-06-25 18:32:11,060 : ERROR : ServiceLogger — addDepartmentEmployee:83 — Такого подразделения нет — id:2fd
+2024-06-25 18:33:10,815 : ERROR : ServiceLogger — addDepartmentEmployee:81 — Неверный айди — id:<built-in function id>
+2024-06-25 18:33:17,323 : ERROR : ServiceLogger — addDepartmentEmployee:81 — Неверный айди — id:<built-in function id>
+2024-06-25 18:33:24,137 : ERROR : ServiceLogger — addDepartmentEmployee:81 — Неверный айди — id:<built-in function id>
+2024-06-25 18:36:04,021 : ERROR : ServiceLogger — addDepartmentEmployee:93 — Работника нет — id:2
+2024-06-25 18:39:17,743 : ERROR : ServiceLogger — addDepartmentEmployee:83 — Неверный айди — id:2gfdg
+2024-06-25 18:39:25,257 : ERROR : ServiceLogger — addDepartmentEmployee:96 — Работника нет — id:2
+2024-06-25 18:39:33,270 : INFO : ServiceLogger — addDepartmentEmployee:112 — Добавлено подразделение <DepartmentEmployee 1>
+2024-06-25 18:40:39,577 : ERROR : ServiceLogger — addDepartmentEmployee:102 — Такое  уже есть — :2
+2024-06-25 18:44:04,205 : ERROR : ServiceLogger — addDepartmentEmployee:102 — Работника нет — id:2
+2024-06-25 18:44:11,568 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 2>
+2024-06-25 18:46:03,900 : ERROR : ServiceLogger — addDepartmentEmployee:108 — Такое  уже есть — :2
+2024-06-25 18:46:23,618 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 2>
+2024-06-25 18:47:14,055 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 1>
+2024-06-25 18:47:14,058 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:47:25,788 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 2>
+2024-06-25 18:47:25,790 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:49:09,840 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — Подразделения нет — id:<built-in function id>
+2024-06-25 18:49:13,843 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — Подразделения нет — id:<built-in function id>
+2024-06-25 18:50:15,125 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников — id:1
+2024-06-25 18:50:28,692 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:50:34,817 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников — id:3
+2024-06-25 18:50:54,982 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников — id:3
+2024-06-25 18:50:57,060 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:51:12,339 : ERROR : ServiceLogger — findDepartmentEmployee:71 — Работника нет — id:1
+2024-06-25 18:51:31,314 : INFO : ServiceLogger — findDepartmentEmployee:80 — Выполнен вывод подразделения.
+2024-06-25 18:51:34,728 : INFO : ServiceLogger — findDepartmentEmployee:80 — Выполнен вывод подразделения.
+2024-06-25 18:52:36,315 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 3>
+2024-06-25 18:52:36,318 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:53:28,074 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Подразделения нет
+2024-06-25 18:54:21,931 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Такой Работника с таким Подразделением нет
+2024-06-25 18:54:28,804 : INFO : ServiceLogger — deleteDepartmentEmployee:154 — Удалено подразделение 1
+2024-06-25 18:54:54,850 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Такой Работника с таким Подразделением нет
+2024-06-25 18:55:29,390 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 4>
+2024-06-25 18:55:29,393 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:56:39,911 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 5>
+2024-06-25 18:56:39,914 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:57:13,580 : INFO : ServiceLogger — deleteDepartmentEmployee:154 — Удалено подразделение 4
+2024-06-25 18:57:37,385 : INFO : ServiceLogger — deleteDepartmentEmployee:154 — Удалено подразделение 3
+2024-06-25 18:58:10,521 : INFO : ServiceLogger — findEmployee:64 — Выполнен вывод работника.
+2024-06-25 18:58:19,034 : INFO : ServiceLogger — findEmployee:64 — Выполнен вывод работника.
+2024-06-25 18:59:15,136 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 6>
+2024-06-25 18:59:15,141 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 18:59:27,084 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 7>
+2024-06-25 18:59:27,087 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:01:22,705 : INFO : ServiceLogger — deleteDepartmentEmployee:155 — Удалено подразделение 6
+2024-06-25 19:01:36,070 : INFO : ServiceLogger — deleteDepartmentEmployee:155 — Удалено подразделение 7
+2024-06-25 19:03:11,962 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 6>
+2024-06-25 19:03:11,966 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:03:14,828 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 7>
+2024-06-25 19:03:14,830 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:03:38,551 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 6
+2024-06-25 19:03:47,321 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Такой Работника с таким Подразделением нет
+2024-06-25 19:03:57,589 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 7
+2024-06-25 19:05:35,832 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 6>
+2024-06-25 19:05:35,836 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:05:38,013 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 7>
+2024-06-25 19:05:38,015 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:06:09,751 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 7
+2024-06-25 19:06:16,189 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 6
+2024-06-25 19:06:33,012 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 6>
+2024-06-25 19:06:33,014 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:06:37,931 : ERROR : ServiceLogger — addDepartmentEmployee:108 — Такое  уже есть — :2
+2024-06-25 19:07:21,562 : INFO : ServiceLogger — deleteEmployee:116 — Удален работник 4
+2024-06-25 19:07:36,430 : INFO : ServiceLogger — deleteEmployee:116 — Удален работник 3
+2024-06-25 19:08:39,566 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 1>
+2024-06-25 19:08:39,569 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:08:50,207 : INFO : ServiceLogger — addDepartmentEmployee:118 — Добавлено подразделение <DepartmentEmployee 2>
+2024-06-25 19:08:50,209 : INFO : ServiceLogger — findAllDepartmentEmployees:37 — Выполнен вывод всех подразделений и работников.
+2024-06-25 19:11:06,128 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 1
+2024-06-25 19:11:06,294 : INFO : ServiceLogger — deleteDepartmentEmployee:156 — Удалено подразделение 2
+2024-06-25 19:11:06,418 : INFO : ServiceLogger — deleteDepartment:94 — Удалено подразделение 2
+2024-06-25 19:14:56,292 : INFO : ServiceLogger — findDepartment:54 — Выполнен вывод подразделения.
+2024-06-25 19:14:56,945 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:14:56,947 : ERROR : ServiceLogger — addDepartment:63 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-25 19:14:57,213 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:14:57,596 : INFO : ServiceLogger — deleteDepartment:94 — Удалено подразделение 1
+2024-06-25 19:14:57,715 : ERROR : ServiceLogger — deleteDepartment:84 — Такого подразделения нет — id:999
+2024-06-25 19:14:57,940 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 19:14:58,222 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 19:14:58,422 : INFO : ServiceLogger — findDepartment:54 — Выполнен вывод подразделения.
+2024-06-25 19:14:58,662 : INFO : ServiceLogger — findDepartment:54 — Выполнен вывод подразделения.
+2024-06-25 19:14:58,962 : INFO : ServiceLogger — updateDepartment:119 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-25 19:14:59,077 : ERROR : ServiceLogger — updateDepartment:110 — Подразделения нет — id:999
+2024-06-25 19:18:39,931 : INFO : ServiceLogger — addEmployee:94 — Добавлен работник <Employee 1>
+2024-06-25 19:18:40,560 : ERROR : ServiceLogger — addEmployee:76 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-25 19:18:41,337 : ERROR : ServiceLogger — deleteEmployee:108 — Работника нет — id:999
+2024-06-25 19:18:41,906 : ERROR : ServiceLogger — findEmployee:52 — Работника нет — id:999
+2024-06-25 19:18:42,406 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:18:42,407 : ERROR : ServiceLogger — updateEmployee:135 — Работника нет — id:999
+2024-06-25 19:19:59,727 : ERROR : ServiceLogger — findDepartment:46 — Подразделения нет — id:2
+2024-06-25 19:20:00,000 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:20:00,002 : ERROR : ServiceLogger — addDepartment:63 — Такое подразделение уже есть — название:NewDepartment1
+2024-06-25 19:20:00,306 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:20:00,709 : INFO : ServiceLogger — deleteDepartment:94 — Удалено подразделение 1
+2024-06-25 19:20:00,852 : ERROR : ServiceLogger — deleteDepartment:84 — Такого подразделения нет — id:999
+2024-06-25 19:20:01,051 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 19:20:01,257 : INFO : ServiceLogger — findAllDepartments:25 — Выполнен вывод всех подразделений.
+2024-06-25 19:20:01,435 : INFO : ServiceLogger — findDepartment:54 — Выполнен вывод подразделения.
+2024-06-25 19:20:01,634 : INFO : ServiceLogger — findDepartment:54 — Выполнен вывод подразделения.
+2024-06-25 19:20:01,915 : INFO : ServiceLogger — updateDepartment:119 — Изменено подразделение UpdatedDepartment  c id 1 на UpdatedDepartment
+2024-06-25 19:20:02,035 : ERROR : ServiceLogger — updateDepartment:110 — Подразделения нет — id:999
+2024-06-25 19:20:02,365 : INFO : ServiceLogger — addEmployee:94 — Добавлен работник <Employee 1>
+2024-06-25 19:20:02,576 : ERROR : ServiceLogger — addEmployee:76 — Зарплата не может быть нулевой — Зарплата была:0
+2024-06-25 19:20:03,027 : ERROR : ServiceLogger — deleteEmployee:108 — Работника нет — id:999
+2024-06-25 19:20:03,318 : ERROR : ServiceLogger — findEmployee:52 — Работника нет — id:999
+2024-06-25 19:20:03,824 : INFO : ServiceLogger — addDepartment:70 — Добавлено подразделение <Department 1>
+2024-06-25 19:20:03,826 : ERROR : ServiceLogger — updateEmployee:135 — Работника нет — id:999
+2024-06-25 19:21:28,700 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Такой Работника с таким Подразделением нет
+2024-06-25 19:21:28,994 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников или его не существует — id:1
+2024-06-25 19:21:29,352 : ERROR : ServiceLogger — findDepartmentEmployee:63 — Подразделения нет — id:1
+2024-06-25 19:23:50,307 : ERROR : ServiceLogger — deleteDepartmentEmployee:142 — Такой Работника с таким Подразделением нет
+2024-06-25 19:23:50,600 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников или его не существует — id:1
+2024-06-25 19:23:50,957 : ERROR : ServiceLogger — findDepartmentEmployee:63 — Подразделения нет — id:1
+2024-06-25 19:23:55,618 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников или его не существует — id:1
+2024-06-25 19:23:56,250 : ERROR : ServiceLogger — findDepartmentEmployee:63 — Подразделения нет — id:1
+2024-06-25 19:24:16,321 : ERROR : ServiceLogger — findAllDepartmentEmployees:27 — У Подразделения нет работников или его не существует — id:1
+2024-06-25 19:24:16,487 : ERROR : ServiceLogger — findDepartmentEmployee:63 — Подразделения нет — id:1

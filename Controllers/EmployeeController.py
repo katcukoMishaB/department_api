@@ -1,142 +1,223 @@
 from app import app, db
-from Forms.formEmployeeAdd import EmployeeAdd
-
-from Models.employeeModel import Employee
-from Models.departmentModel import Department
-
-from flask import render_template, flash, redirect, url_for, jsonify
+from flask import jsonify
 from flask_restful import Resource, request
 
+from Services.employeeService import EmployeeService
+from Validators.employeeValidator import EmployeeValidator
+
+from Exceptions.problemDetails import ProblemDetails
+from Exceptions.classes import EmployeeNotFoundException
+from Exceptions.classes import UniqueNameException
+from Exceptions.classes import SalaryLowException
+from Exceptions.classes import WrongIdTypeException
+from Exceptions.classes import DepartmentNotFoundException
+
+
+from jsonschema.exceptions import ValidationError
+
+from Loggers.controllerLogger import controllerLogger
+
+_employeeService = EmployeeService()
+_employeeValidator = EmployeeValidator()
 
 
 class EmployeeController(Resource):
+    """Класс контроллера работников. Обрабатывает запросы"""
     @staticmethod
-    @app.route('/employees', methods=['GET'])
-    def all_employees():
-        employees = Employee.query.all()
-        return render_template('employees.html', employees=employees)
+    @app.route('/v1/employees', methods=['GET'])
+    def get_employees():
+        """Возвращает весь список подразделений."""
+        return jsonify({"Employees": _employeeService.findAllEmployees()})
+        
+    @staticmethod
+    @app.route('/v1/employees/<id>', methods=['GET'])
+    def get_employee(id):
+        try: 
+            """Возвращает работника по id."""
+            return jsonify({"Employee": _employeeService.findEmployee(id)})
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска  Employee",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/employees/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
+        except EmployeeNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Employee",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/employees/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
     
     @staticmethod
-    @app.route('/employees/add', methods=['GET', 'POST'])
+    @app.route('/v1/employees/add', methods=['POST'])
     def add_employee():
-        form = EmployeeAdd()
-        if form.validate_on_submit():
-            department_name = form.department_name.data
-            department = Department.query.filter_by(department_name=department_name).first()
-            if not department:
-                flash('Департамент не найден.')
-                return redirect(url_for('add_employee'))
-
-            try:
-                existing_employee = Employee.query.filter_by(
-                last_name=form.last_name.data,
-                first_name=form.first_name.data,
-                patronimic=form.patronimic.data,
-                department_id=department.id
-                ).first()
-                if existing_employee:
-                    flash('Сотрудник с такими данными уже существует.')
-                    return redirect('/employees/add')
-
-                employee = Employee(
-                    last_name=form.last_name.data,
-                    first_name=form.first_name.data,
-                    patronimic=form.patronimic.data,
-                    salary=form.salary.data,
-                    hire_date=form.hire_date.data,
-                    department_id=department.id,
-                )
-                db.session.add(employee)
-                db.session.commit()
-                flash('Работник успешно добавлен.')
-                return redirect('/employees/add')
-            except Exception as err:
-                flash(f'Ошибка при добавлении работника: {str(err)}')
-                db.session.rollback()
-
-        return render_template('employee_add.html', form=form)
-
+        """Создает объект работника по полученному JSON. Перед созданием проверяет его на соответствие нужной схеме"""
+        try:
+            request_data = request.get_json()
+            print(request_data)
+        except Exception as err:
+            problemDetails = ProblemDetails(
+            type="Ошибка коректности в Employee",
+            title="JSON некоректнет",
+            status=400,
+            detail="Отправленные данные некоректные",
+            instance="http://127.0.0.1:3000/v1/employees/add"
+            )
+            controllerLogger.error("Ошибка разбора JSON: " + str(err))
+            return jsonify(problemDetails), 400
+        try:
+            _employeeValidator.validate_employee(request_data) 
+            _employeeService.addEmployee(request_data)
+            return jsonify({"Employees": _employeeService.findAllEmployees()})
+        except ValidationError as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка валидации в Employee",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленный JSON не соответствует схеме.",
+            instance = "http://127.0.0.1:3000/v1/employees/add"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except UniqueNameException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка создания Employee",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленная сущность уже существует.",
+            instance = "http://127.0.0.1:3000/v1/employees/add"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except DepartmentNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/employees/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
     
-    @staticmethod
-    @app.route('/employees/search', methods=['GET', 'POST'])
-    def search_employee():
-        if request.method == 'POST':
-            last_name = request.form.get('last_name')
-            first_name = request.form.get('first_name')
-            patronimic = request.form.get('patronimic')
-            department_name = request.form.get('department_name')
-            department = Department.query.filter_by(department_name=department_name).first()
-            if not department:
-                flash('Департамент не найден.')
-                return redirect(url_for('search_employee'))
-
-            employee = Employee.query.filter_by(
-            last_name=last_name,
-            first_name=first_name,
-            patronimic=patronimic,
-            department_id=department.id
-            ).first()
-
-
-            if employee:
-                return redirect(url_for('search_employee_results', employee_id=employee.id))
-            else:
-                flash('Работник не найден')
-
-        return render_template('employee_search.html')
+        except SalaryLowException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка создания Employee",
+            title = err.message,
+            status = 400,
+            detail = "Зарплата не может быть такой маленькой (<1).",
+            instance = "http://127.0.0.1:3000/v1/employees/add"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
         
+    
+    @staticmethod
+    @app.route('/v1/employees/update/<id>', methods=['PUT'])
+    def update_employee(id):
+        """Обновляет запись о подразделении."""
+        try:
+            request_data = request.get_json()
+        except Exception as err:
+            problemDetails = ProblemDetails(
+            type="Ошибка коректности в Employee",
+            title="JSON некоректнет",
+            status=400,
+            detail="Отправленные данные некоректные",
+            instance="http://127.0.0.1:3000/v1/employees/update/<int:id>"
+            )
+            controllerLogger.error("Ошибка разбора JSON: " + str(err))
+            return jsonify(problemDetails), 400
+        try:
+            _employeeValidator.validate_employee(request_data) 
+            _employeeService.updateEmployee(id, request_data)
+            return jsonify({"Employees": _employeeService.findAllEmployees()})
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска  Employee",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/employees/update/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
+
+        except UniqueNameException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка создания Employee",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленная сущность уже существует.",
+            instance = "http://127.0.0.1:3000/v1/employees/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except ValidationError as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка валидации в Employee",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленный JSON не соответствует схеме.",
+            instance = "http://127.0.0.1:3000/v1/employees/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except EmployeeNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Employee",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/employees/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
+        except DepartmentNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/employees/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
 
     @staticmethod
-    @app.route('/employees/search/<int:employee_id>', methods=['GET'])
-    def search_employee_results(employee_id):
-        employee = Employee.query.get_or_404(employee_id)
-        return render_template('employee_search_results.html', employee=employee)
-    
+    @app.route('/v1/employees/delete/<id>', methods=['DELETE'])
+    def delete_employee(id):
+        """Удаляет подразделение, возвращает id удалённой записи."""
+        try:
+            response = _employeeService.deleteEmployee(id)
+            return jsonify(f"{response}" )
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска  Employee",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/employees/delete/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
 
-    """@staticmethod
-    @app.route('/employees/update', methods=['GET','PUT'])
-    def update_department():
-        if request.method == 'PUT':
-            data = request.json
-            current_department_name = data.get('current_department_name')
-            new_department_name = data.get('new_department_name')
-
-            department = Department.query.filter_by(department_name=current_department_name).first()
-            department_2 = Department.query.filter_by(department_name=new_department_name).first()
-            if department and not department_2:
-                department.department_name = new_department_name
-                db.session.commit()
-                flash(f'Подразделение "{current_department_name}" успешно обновлено на "{new_department_name}".')
-                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
-            else:
-                flash(f'Подразделение "{current_department_name}" не найдено или название на которые вы пытаетесь сменить уже существует')
-                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
+        except EmployeeNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Employee",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/employees/delete/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
         
-        return render_template('department_update.html')
-    
-
-    @staticmethod
-    @app.route('/employees/delete', methods=['GET','DELETE'])
-    def delete_department():
-        if request.method == 'DELETE':
-            data = request.json
-            department_name = data.get('department_name')
-            department = Department.query.filter_by(department_name=department_name).first()
-            print(department)
-            if department:
-                try:
-                    Employee.query.filter_by(department_id=department.id).delete()
-                    db.session.delete(department)
-                    db.session.commit()
-
-                    flash(f'Подразделение "{department_name}" и все его работники успешно удалены.')
-                    return jsonify({'message': f'Подразделение "{department_name}" и все его работники успешно удалены.'}), 200
-                except Exception as e:
-                    flash(f'Ошибка удаления подразделения: {str(e)}')
-                    db.session.rollback()
-                    return jsonify({'error': 'Ошибка удаления подразделения'}), 500
-            else:
-                flash(f'Подразделение "{department_name}" не найдено...')
-                return jsonify({'error': f'Подразделение "{department_name}" не найдено.'}), 200
-
-        return render_template('department_delete.html')"""

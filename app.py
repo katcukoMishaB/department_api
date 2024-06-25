@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 
-app = Flask(__name__, template_folder='Templates')
+app = Flask(__name__)
 app.json.ensure_ascii = False
 app.config.from_object(Config)
 
@@ -15,5 +15,6 @@ migrate = Migrate(app, db)
 
 api = Api(app)
 
-import Models.departmentModel 
-import Models.employeeModel
+from Models.departmentModel import Department
+from Models.employeeModel import Employee
+from Models.departmentEmployeeModel import DepartmentEmployee

@@ -1,0 +1,7 @@
+{
+    "type": "object",
+    "properties": {
+        "department_name": {"type": "string", "minLength": 1}
+    },
+    "required": ["department_name"]
+}

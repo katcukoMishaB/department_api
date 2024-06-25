@@ -1,120 +1,202 @@
 from app import app, db
-from Forms.formDepertmentAdd import DepartmentAdd
-
-
-from Models.departmentModel import Department
-from Models.employeeModel import Employee
-from flask import render_template, flash, redirect, url_for, jsonify
+from flask import jsonify
 from flask_restful import Resource, request
+
+from Services.departmentService import DepartmentService
+from Validators.departmentValidator import DepartmentValidator
+
+from Exceptions.problemDetails import ProblemDetails
+from Exceptions.classes import DepartmentNotFoundException
+from Exceptions.classes import UniqueNameException
+from Exceptions.classes import WrongIdTypeException
+
+from jsonschema.exceptions import ValidationError
+
+from Loggers.controllerLogger import controllerLogger
+
+_departmentService = DepartmentService()
+_departmentValidator = DepartmentValidator()
 
 
 class DepartmentController(Resource):
-    
+    """Класс контроллера подразделений. Обрабатывает запросы"""
     @staticmethod
-    @app.route('/departments/add', methods=['GET','POST'])
-    def add_department():
-        form = DepartmentAdd()
-        if form.validate_on_submit():
-            if request.content_type == 'application/json':
-                data = request.json
-            else:
-                data = request.form
-            
-            print(data)
-            department_name = data.get('department_name')
+    @app.route('/v1/departments', methods=['GET'])
+    def get_departments():
+        """Возвращает весь список подразделений."""
+        return jsonify({"Departments": _departmentService.findAllDepartments()})
 
-            existing_department = Department.query.filter_by(department_name=department_name).first()
 
-            if existing_department:
-                flash('Подразделение с таким названием уже существует.')
-                return redirect(url_for('add_department'))
-
-            new_department = Department(
-                department_name = department_name
+    @staticmethod
+    @app.errorhandler(404)
+    def pageNotFount(error):
+        problemDetails = ProblemDetails(
+            type = "Ошибка неправильный ввод рута",
+            title ="404",
+            status = 404,
+            detail = "Неправильно указан юрл (его нет)",
+            instance = "http://127.0.0.1:3000"
             )
+        controllerLogger.error(str(problemDetails))
+        return jsonify(problemDetails), 404
 
-            db.session.add(new_department)
-            db.session.commit()
-
-            print('добавлен')
-            flash(f'Подразделение "{department_name}" успешно удалено.')
-            return redirect(url_for('add_department'))
-        return render_template('department_add.html', title='Department Add', form=form)
-    
-
-    @staticmethod
-    @app.route('/departments', methods=['GET'])
-    def all_departments():
-        departments = Department.query.all()
-        return render_template('departments.html', departments=departments)
-    
-
-    @staticmethod
-    @app.route('/departments/search', methods=['GET', 'POST'])
-    def search_department():
-        if request.method == 'POST':
-            department_name = request.form.get('department_name')
-            department = Department.query.filter_by(department_name=department_name).first()
-            if department:
-                return redirect(url_for('search_department_results', department_id=department.id))
-            else:
-                flash('Подразделение не найдено')
-        return render_template('department_search.html')
-
-    @staticmethod
-    @app.route('/departments/search/<int:department_id>', methods=['GET'])
-    def search_department_results(department_id):
-        department = Department.query.get_or_404(department_id)
-        employees = Employee.query.filter_by(department_id=department_id).all()
-        return render_template('department_search_results.html', department=department, employees=employees)
-
-    
-
-
-    @staticmethod
-    @app.route('/departments/update', methods=['GET','PUT'])
-    def update_department():
-        if request.method == 'PUT':
-            data = request.json
-            current_department_name = data.get('current_department_name')
-            new_department_name = data.get('new_department_name')
-
-            department = Department.query.filter_by(department_name=current_department_name).first()
-            department_2 = Department.query.filter_by(department_name=new_department_name).first()
-            if department and not department_2:
-                department.department_name = new_department_name
-                db.session.commit()
-                flash(f'Подразделение "{current_department_name}" успешно обновлено на "{new_department_name}".')
-                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
-            else:
-                flash(f'Подразделение "{current_department_name}" не найдено или название на которые вы пытаетесь сменить уже существует')
-                return jsonify({'error': f'Подразделение "{current_department_name}" не найдено.'}), 200
         
-        return render_template('department_update.html')
+    @staticmethod
+    @app.route('/v1/departments/<id>', methods=['GET'])
+    def get_department(id):
+        try: 
+            """Возвращает подразделение по id."""
+            return jsonify({"Department": _departmentService.findDepartment(id)})
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/departments/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
+
+        except DepartmentNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/departments/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
     
+    @staticmethod
+    @app.route('/v1/departments/add', methods=['POST'])
+    def add_department():
+        """Создает объект подразделения по полученному JSON. Перед созданием проверяет его на соответствие нужной схеме"""
+        try:
+            request_data = request.get_json()
+        except Exception as err:
+            problemDetails = ProblemDetails(
+            type="Ошибка коректности в Department",
+            title="JSON некоректнет",
+            status=400,
+            detail="Отправленные данные некоректные",
+            instance="http://127.0.0.1:3000/v1/departments/add"
+            )
+            controllerLogger.error("Ошибка разбора JSON: " + str(err))
+            return jsonify(problemDetails), 400
+        try:
+            _departmentValidator.validate_department(request_data) 
+            _departmentService.addDepartment(request_data)
+            return jsonify({"Departments": _departmentService.findAllDepartments()})
+
+        except ValidationError as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка валидации в Department",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленный JSON не соответствует схеме.",
+            instance = "http://127.0.0.1:3000/v1/departments/add"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except UniqueNameException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка создания Department",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленная сущность уже существует.",
+            instance = "http://127.0.0.1:3000/v1/departments/add"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        
+    
+    @staticmethod
+    @app.route('/v1/departments/update/<id>', methods=['PUT'])
+    def update_department(id):
+        """Обновляет запись о подразделении."""
+        try:
+            request_data = request.get_json()
+        except Exception as err:
+            problemDetails = ProblemDetails(
+            type="Ошибка коректности в Department",
+            title="JSON некоректнет",
+            status=400,
+            detail="Отправленные данные некоректные",
+            instance="http://127.0.0.1:3000/v1/departments/update/<int:id>"
+            )
+            controllerLogger.error("Ошибка разбора JSON: " + str(err))
+            return jsonify(problemDetails), 400
+        try:
+            _departmentValidator.validate_department(request_data) 
+            _departmentService.updateDepartment(id, request_data)
+            return jsonify({"Departments": _departmentService.findAllDepartments()})
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/departments/update/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
+        except UniqueNameException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка создания Department",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленная сущность уже существует.",
+            instance = "http://127.0.0.1:3000/v1/departments/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except ValidationError as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка валидации в Department",
+            title = err.message,
+            status = 400,
+            detail = "Отпрвленный JSON не соответствует схеме.",
+            instance = "http://127.0.0.1:3000/v1/departments/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 400
+        except DepartmentNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/departments/update/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
 
     @staticmethod
-    @app.route('/departments/delete', methods=['GET','DELETE'])
-    def delete_department():
-        if request.method == 'DELETE':
-            data = request.json
-            department_name = data.get('department_name')
-            department = Department.query.filter_by(department_name=department_name).first()
-            print(department)
-            if department:
-                try:
-                    Employee.query.filter_by(department_id=department.id).delete()
-                    db.session.delete(department)
-                    db.session.commit()
-
-                    flash(f'Подразделение "{department_name}" и все его работники успешно удалены.')
-                    return jsonify({'message': f'Подразделение "{department_name}" и все его работники успешно удалены.'}), 200
-                except Exception as e:
-                    flash(f'Ошибка удаления подразделения: {str(e)}')
-                    db.session.rollback()
-                    return jsonify({'error': 'Ошибка удаления подразделения'}), 500
-            else:
-                flash(f'Подразделение "{department_name}" не найдено...')
-                return jsonify({'error': f'Подразделение "{department_name}" не найдено.'}), 200
-
-        return render_template('department_delete.html')
+    @app.route('/v1/departments/delete/<id>', methods=['DELETE'])
+    def delete_department(id):
+        """Удаляет подразделение, возвращает id удалённой записи."""
+        try:
+            response = _departmentService.deleteDepartment(id)
+            return jsonify(f"{response}" )
+        except WrongIdTypeException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 415,
+            detail = "Неправильно указан id (его тип не правильный)",
+            instance = "http://127.0.0.1:3000/v1/departments/delete/<id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 415
+        except DepartmentNotFoundException as err:
+            problemDetails = ProblemDetails(
+            type = "Ошибка поиска Department",
+            title = err.message,
+            status = 404,
+            detail = "Неправильно указан id (его нет)",
+            instance = "http://127.0.0.1:3000/v1/departments/delete/<int:id>"
+            )
+            controllerLogger.error(str(problemDetails))
+            return jsonify(problemDetails), 404
